@@ -1,0 +1,50 @@
+{
+    "name": "otisz/laravel-imgix",
+    "description": "Laravel package for generating URLs with Imgix.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Levente Otta",
+            "email": "leventeotta@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "imgix/imgix-php": "^2.1",
+        "illuminate/support": "^5.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.2",
+        "orchestra/testbench": "^3.7",
+        "phpunit/phpunit": "^7.0",
+        "squizlabs/php_codesniffer": "^3.4"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "Otisz\\Laravel\\Imgix\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Otisz\\Laravel\\Imgix\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "lint": "phpcs -p --standard=psr2 src",
+        "test": "phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Otisz\\Laravel\\Imgix\\ImgixServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
