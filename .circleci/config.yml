@@ -7,6 +7,6 @@ jobs:
     working_directory: ~/package
     steps:
       - checkout
-      - run: sudo docker-php-ext-install zip
       - run: sudo composer self-update
+      - run: composer install -n --prefer-dist
       - run: ./vendor/bin/phpunit
