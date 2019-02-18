@@ -43,7 +43,7 @@ class ImgixServiceProvider extends ServiceProvider
 
         $this->app->singleton(UrlBuilder::class, function () {
             return new UrlBuilder(
-                config('imgix.domains'),
+                array_filter(config('imgix.domains')),
                 config('imgix.useHttps', false),
                 config('imgix.signKey', ''),
                 config('imgix.shardStrategy', ShardStrategy::CRC),
