@@ -5,7 +5,7 @@
  * Copyright (c) 2019. All rights reserved.
  */
 
-namespace Otisz\Laravel\Imgix\Tests\Integration;
+namespace Otisz\Laravel\Imgix\Tests\Feature;
 
 use Imgix\UrlBuilder;
 use Otisz\Laravel\Imgix\Imgix;
@@ -15,7 +15,7 @@ use Otisz\Laravel\Imgix\Imgix;
  *
  * @author Levente Otta <leventeotta@gmail.com>
  *
- * @package Otisz\Laravel\Imgix\Tests\Integration
+ * @package Otisz\Laravel\Imgix\Tests\Feature
  */
 class ImgixServiceProviderTest extends TestCase
 {
