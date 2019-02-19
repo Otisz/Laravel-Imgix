@@ -5,18 +5,18 @@
  * Copyright (c) 2019. All rights reserved.
  */
 
-namespace Otisz\Laravel\Imgix\Tests\Feature;
+namespace Otisz\Imgix\Tests\Feature;
 
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use Otisz\Laravel\Imgix\Imgix;
-use Otisz\Laravel\Imgix\ImgixServiceProvider;
+use Otisz\Imgix\Imgix;
+use Otisz\Imgix\ImgixServiceProvider;
 
 /**
  * Class TestCase
  *
  * @author Levente Otta <leventeotta@gmail.com>
  *
- * @package Otisz\Laravel\Imgix\Tests\Feature
+ * @package Otisz\Imgix\Tests\Feature
  */
 abstract class TestCase extends BaseTestCase
 {
