@@ -1,8 +1,6 @@
 # Laravel Imgix
 
-Laravel package for generating [Imgix](https://www.imgix.com) URLs for your images.
-
-Multi-domains is supported!
+Laravel package for generating [Imgix](https://www.imgix.com) URLs for your images with multi-domain support.
 
 ## Dependencies
 
@@ -21,13 +19,13 @@ In Laravel 5.5 or above the service provider will automatically get registered. 
 ```php
 'providers' => [
     ...
-    Otisz\Laravel\Imgix\ImgixServiceProvider::class,
+    Otisz\Imgix\ImgixServiceProvider::class,
     ...
 ],
 
 'aliases' => [
     ...
-    'Imgix' =>  Otisz\Laravel\Imgix\Facades\Imgix::class,
+    'Imgix' =>  Otisz\Imgix\Facades\Imgix::class,
     ...
 ],
 ```
