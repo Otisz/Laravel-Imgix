@@ -1,5 +1,10 @@
 # Laravel Imgix
 
+[![Latest Version on Packagist][shield-packagist]][link-packagist]
+[![Software License][shield-license]](LICENSE.md)
+[![Build Status][shield-circleci]][link-circleci]
+[![Total Downloads][shield-downloads]][link-packagist]
+
 Laravel package for generating [Imgix](https://www.imgix.com) URLs for your images with multi-domain support.
 
 ## Dependencies
@@ -159,3 +164,11 @@ If you discover any security-related issues, please email [leventeotta@gmail.com
 ## Licence
 
 The MIT Licence (MIT). Please see [License File](LICENSE.md) for more information.
+
+[shield-packagist]: https://img.shields.io/packagist/v/otisz/laravel-imgix.svg?style=flat-square
+[shield-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[shield-circleci]: https://img.shields.io/circleci/token/67d66f24c8eabf5cb95da9dc574bf2c2da59c096/project/github/otisz/laravel-imgix/master.svg?style=flat-square
+[shield-downloads]: https://img.shields.io/packagist/dt/otisz/laravel-imgix.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/otisz/laravel-imgix
+[link-circleci]: https://packagist.org/packages/otisz/laravel-imgix
