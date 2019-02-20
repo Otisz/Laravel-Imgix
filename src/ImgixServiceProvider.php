@@ -29,7 +29,7 @@ class ImgixServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/../config/imgix.php' => config_path('imgix.php'),
-        ]);
+        ], 'imgix');
     }
 
     /**
