@@ -57,7 +57,7 @@
         }
     },
     "non-feature-branches": [
-        "hotfix/*"
+        "dev-hotfix/*"
     ],
     "config": {
         "sort-packages": true
