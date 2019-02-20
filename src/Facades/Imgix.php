@@ -5,7 +5,7 @@
  * Copyright (c) 2019. All rights reserved.
  */
 
-namespace Otisz\Laravel\Imgix\Facades;
+namespace Otisz\Imgix\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Facade;
  *
  * @author Levente Otta <leventeotta@gmail.com>
  *
- * @package Otisz\Laravel\Imgix\Facades
+ * @package Otisz\Imgix\Facades
  */
 class Imgix extends Facade
 {

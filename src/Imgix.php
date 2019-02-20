@@ -5,7 +5,7 @@
  * Copyright (c) 2019. All rights reserved.
  */
 
-namespace Otisz\Laravel\Imgix;
+namespace Otisz\Imgix;
 
 use Imgix\UrlBuilder;
 
@@ -14,7 +14,7 @@ use Imgix\UrlBuilder;
  *
  * @author Levente Otta <leventeotta@gmail.com>
  *
- * @package Otisz\Laravel\Imgix
+ * @package Otisz\Imgix
  */
 class Imgix
 {

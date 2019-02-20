@@ -5,11 +5,11 @@
  * Copyright (c) 2019. All rights reserved.
  */
 
-namespace Otisz\Laravel\Imgix\Tests\Unit;
+namespace Otisz\Imgix\Tests\Unit;
 
 use Imgix\UrlBuilder;
 use Mockery;
-use Otisz\Laravel\Imgix\Imgix;
+use Otisz\Imgix\Imgix;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @author Levente Otta <leventeotta@gmail.com>
  *
- * @package Otisz\Laravel\Imgix\Tests\Unit
+ * @package Otisz\Imgix\Tests\Unit
  */
 class ImgixTest extends TestCase
 {
@@ -27,7 +27,7 @@ class ImgixTest extends TestCase
     protected $urlBuilder;
 
     /**
-     * @var \Otisz\Laravel\Imgix\Imgix
+     * @var \Otisz\Imgix\Imgix
      */
     protected $imgix;
 
@@ -41,13 +41,13 @@ class ImgixTest extends TestCase
     }
 
     /** @test */
-    public function it_creates_url()
+    public function it_creates_url(): void
     {
         $expectedArgs = [
-            $path = 'test.jpg',
+            $path = 'bridge.png',
             $params = ['w' => 100, 'h' => 100],
         ];
-        $expectedReturn = 'http://test.imgix.net/bridge.png?h=100&w=100';
+        $expectedReturn = 'http://example.imgix.net/bridge.png?h=100&w=100';
         $this->urlBuilder
             ->shouldReceive('createURL')
             ->withArgs($expectedArgs)
