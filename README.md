@@ -171,4 +171,4 @@ The MIT Licence (MIT). Please see [License File](LICENSE.md) for more informatio
 [shield-downloads]: https://img.shields.io/packagist/dt/otisz/laravel-imgix.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/otisz/laravel-imgix
-[link-circleci]: https://packagist.org/packages/otisz/laravel-imgix
+[link-circleci]: https://circleci.com/gh/Otisz/Laravel-Imgix
