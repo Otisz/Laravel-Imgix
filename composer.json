@@ -1,6 +1,6 @@
 {
     "name": "otisz/laravel-imgix",
-    "description": "Laravel package for generating URLs with Imgix.",
+    "description": "Laravel package for generating Imgix URLs for your images with multi-domain support",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -25,12 +25,12 @@
             "src/helpers.php"
         ],
         "psr-4": {
-            "Otisz\\Laravel\\Imgix\\": "src"
+            "Otisz\\Imgix\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Otisz\\Laravel\\Imgix\\Tests\\": "tests"
+            "Otisz\\Imgix\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -40,7 +40,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Otisz\\Laravel\\Imgix\\ImgixServiceProvider"
+                "Otisz\\Imgix\\ImgixServiceProvider"
             ]
         }
     },

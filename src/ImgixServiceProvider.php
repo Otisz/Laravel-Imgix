@@ -5,7 +5,7 @@
  * Copyright (c) 2019. All rights reserved.
  */
 
-namespace Otisz\Laravel\Imgix;
+namespace Otisz\Imgix;
 
 use Illuminate\Support\ServiceProvider;
 use Imgix\ShardStrategy;
@@ -16,7 +16,7 @@ use Imgix\UrlBuilder;
  *
  * @author Levente Otta <leventeotta@gmail.com>
  *
- * @package Otisz\Laravel\Imgix
+ * @package Otisz\Imgix
  */
 class ImgixServiceProvider extends ServiceProvider
 {
@@ -42,13 +42,7 @@ class ImgixServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../config/imgix.php', 'imgix');
 
         $this->app->singleton(UrlBuilder::class, function () {
-            return new UrlBuilder(
-                array_filter(config('imgix.domains')),
-                config('imgix.useHttps', false),
-                config('imgix.signKey', ''),
-                config('imgix.shardStrategy', ShardStrategy::CRC),
-                config('imgix.includeLibraryParam', true)
-            );
+            return $this->imgixUrlBuilder();
         });
 
         $this->app->singleton(Imgix::class, function ($app) {
@@ -56,5 +50,23 @@ class ImgixServiceProvider extends ServiceProvider
         });
 
         $this->app->alias(Imgix::class, 'imgix');
+    }
+
+    /**
+     * Create a new imgix instance.
+     *
+     * @author Levente Otta <leventeotta@gmail.com>
+     *
+     * @return \Imgix\UrlBuilder
+     */
+    private function imgixUrlBuilder(): UrlBuilder
+    {
+        return new UrlBuilder(
+            array_filter(config('imgix.domains')),
+            config('imgix.useHttps', false),
+            config('imgix.signKey', ''),
+            config('imgix.shardStrategy', ShardStrategy::CRC),
+            config('imgix.includeLibraryParam', true)
+        );
     }
 }

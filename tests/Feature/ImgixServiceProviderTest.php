@@ -5,29 +5,29 @@
  * Copyright (c) 2019. All rights reserved.
  */
 
-namespace Otisz\Laravel\Imgix\Tests\Feature;
+namespace Otisz\Imgix\Tests\Feature;
 
 use Imgix\UrlBuilder;
-use Otisz\Laravel\Imgix\Imgix;
+use Otisz\Imgix\Imgix;
 
 /**
  * Class ImgixServiceProviderTest
  *
  * @author Levente Otta <leventeotta@gmail.com>
  *
- * @package Otisz\Laravel\Imgix\Tests\Feature
+ * @package Otisz\Imgix\Tests\Feature
  */
 class ImgixServiceProviderTest extends TestCase
 {
     /** @test */
-    public function it_boots()
+    public function it_boots(): void
     {
         $config = include dirname(__DIR__) . '/../config/imgix.php';
         $this->assertEquals($config, $this->app['config']['imgix']);
     }
 
     /** @test */
-    public function it_registers()
+    public function it_registers(): void
     {
         $this->assertTrue($this->app->bound(UrlBuilder::class));
         $this->assertInstanceOf(UrlBuilder::class, $this->app->make(UrlBuilder::class));
