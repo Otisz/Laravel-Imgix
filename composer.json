@@ -1,8 +1,20 @@
 {
     "name": "otisz/laravel-imgix",
     "description": "Laravel package for generating Imgix URLs for your images with multi-domain support",
+    "keywords": [
+        "laravel",
+        "imgix",
+        "cdn",
+        "image",
+        "image-processing",
+        "multi-domain"
+    ],
     "type": "library",
     "license": "MIT",
+    "support": {
+        "issues": "https://github.com/Otisz/Laravel-Imgix/issues",
+        "source": "https://github.com/Otisz/Laravel-Imgix"
+    },
     "authors": [
         {
             "name": "Levente Otta",
@@ -44,7 +56,12 @@
             ]
         }
     },
+    "non-feature-branches": [
+        "hotfix/*"
+    ],
     "config": {
         "sort-packages": true
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
