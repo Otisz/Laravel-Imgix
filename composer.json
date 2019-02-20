@@ -57,7 +57,10 @@
         }
     },
     "non-feature-branches": [
-        "dev-hotfix/*"
+        "dev-hotfix/*",
+        "dev-release/*",
+        "dev-feature/*",
+        "dev-develop"
     ],
     "config": {
         "sort-packages": true
