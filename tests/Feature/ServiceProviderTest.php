@@ -12,13 +12,13 @@ use Imgix\UrlBuilder;
 use Otisz\Imgix\Imgix;
 
 /**
- * Class ImgixServiceProviderTest
+ * Class ServiceProviderTest
  *
  * @author Levente Otta <leventeotta@gmail.com>
  *
  * @package Otisz\Imgix\Tests\Feature
  */
-class ImgixServiceProviderTest extends TestCase
+class ServiceProviderTest extends TestCase
 {
     /** @test */
     public function it_boots(): void
@@ -30,8 +30,6 @@ class ImgixServiceProviderTest extends TestCase
     /** @test */
     public function it_registers(): void
     {
-        $this->assertTrue($this->app->bound(UrlBuilder::class));
-        $this->assertInstanceOf(UrlBuilder::class, $this->app->make(UrlBuilder::class));
         $this->assertTrue($this->app->bound(Imgix::class));
         $this->assertInstanceOf(Imgix::class, $this->app->make(Imgix::class));
         $this->assertInstanceOf(Imgix::class, $this->app->make('imgix'));
