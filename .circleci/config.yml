@@ -8,8 +8,15 @@ jobs:
 
     steps:
       - checkout
-      - run: sudo composer self-update
-      - run: composer install -n
+      - restore_cache:
+          keys:
+            - v1-depencies-{{ checksum "composer.json" }}
+            - v1-depencies-
+      - run: composer install -n --prefer-dist
+      - save_cache:
+          key: v1-depencies-{{ checksum "composer.json" }}
+          paths:
+            - vendor
       - run: vendor/bin/phpunit
       - run: vendor/bin/phpcs --standard=PSR2 src
 
