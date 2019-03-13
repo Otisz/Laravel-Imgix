@@ -128,7 +128,6 @@ Imgix::createUrl(string $path, array $params = []): string
 ```php
 Imgix::createUrl('bridge.png', ['w' => 100, 'h' => 100])
 
-// Prints out:
 // http://example.imgix.net/bridge.png?w=100&h=100
 ```
 
@@ -142,9 +141,8 @@ imgix(string $path, array $params = []): string
 `$params`: The parameters provided by [Imgix](https://docs.imgix.com/apis/url)
 
 ```php
-Imgix::createUrl('bridge.png', ['w' => 100, 'h' => 100])
+imgix('bridge.png', ['w' => 100, 'h' => 100])
 
-// Prints out:
 // http://example.imgix.net/bridge.png?w=100&h=100
 ```
     
