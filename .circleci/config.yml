@@ -1,12 +1,39 @@
 version: 2
-
 jobs:
-  build:
+  test-7.3: &test-template
     docker:
-      - image: circleci/php:7.2-node-browsers
-    working_directory: ~/package
+      - image: circleci/php:7.3
+
+    working_directory: ~/imgix
+
     steps:
       - checkout
-      - run: sudo composer self-update
+      - restore_cache:
+          keys:
+            - v1-depencies-{{ checksum "composer.json" }}
+            - v1-depencies-
       - run: composer install -n --prefer-dist
-      - run: ./vendor/bin/phpunit
+      - save_cache:
+          key: v1-depencies-{{ checksum "composer.json" }}
+          paths:
+            - vendor
+      - run: vendor/bin/phpunit
+      - run: vendor/bin/phpcs --standard=PSR2 src
+
+  test-7.2:
+    <<: *test-template
+    docker:
+      - image: circleci/php:7.2
+
+  test-7.1:
+    <<: *test-template
+    docker:
+      - image: circleci/php:7.1
+
+workflows:
+  version: 2
+  test_on_supported_php_versions:
+    jobs:
+      - test-7.3
+      - test-7.2
+      - test-7.1
