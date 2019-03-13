@@ -52,8 +52,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Otisz\\Imgix\\ImgixServiceProvider"
-            ]
+                "Otisz\\Imgix\\Providers\\ServiceProvider"
+            ],
+            "aliases": {
+                "Imgix": "Otisz\\Imgix\\Facades\\Imgix"
+            }
         }
     },
     "non-feature-branches": [
@@ -65,6 +68,6 @@
     "config": {
         "sort-packages": true
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

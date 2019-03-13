@@ -24,7 +24,7 @@ In Laravel 5.5 or above the service provider will automatically get registered. 
 ```php
 'providers' => [
     ...
-    Otisz\Imgix\ImgixServiceProvider::class,
+    Otisz\Imgix\Providers\ServiceProvider::class,
     ...
 ],
 
@@ -119,16 +119,15 @@ return [
 ### Facade
 
 ```php
-Imgix::createUrl(string $path, array $params = []): string
+\Imgix::createUrl(string $path, array $params = []): string
 ```
 
 `$path`: The path of the image \
 `$params`: The parameters provided by [Imgix](https://docs.imgix.com/apis/url)
 
 ```php
-Imgix::createUrl('bridge.png', ['w' => 100, 'h' => 100])
+\Imgix::createUrl('bridge.png', ['w' => 100, 'h' => 100])
 
-// Prints out:
 // http://example.imgix.net/bridge.png?w=100&h=100
 ```
 
@@ -142,9 +141,8 @@ imgix(string $path, array $params = []): string
 `$params`: The parameters provided by [Imgix](https://docs.imgix.com/apis/url)
 
 ```php
-Imgix::createUrl('bridge.png', ['w' => 100, 'h' => 100])
+imgix('bridge.png', ['w' => 100, 'h' => 100])
 
-// Prints out:
 // http://example.imgix.net/bridge.png?w=100&h=100
 ```
     

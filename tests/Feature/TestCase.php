@@ -1,15 +1,16 @@
 <?php
 /**
  * Deployed by Levente Otta <leventeotta@gmail.com>
+ *
  * @author Levente Otta <leventeotta@gmail.com>
- * Copyright (c) 2019. All rights reserved.
+ * @copyright Copyright (c) 2019. Levente Otta
  */
 
 namespace Otisz\Imgix\Tests\Feature;
 
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use Otisz\Imgix\Imgix;
-use Otisz\Imgix\ImgixServiceProvider;
+use Otisz\Imgix\Providers\ServiceProvider;
 
 /**
  * Class TestCase
@@ -28,7 +29,7 @@ abstract class TestCase extends BaseTestCase
     protected function getPackageProviders($app): array
     {
         return [
-            ImgixServiceProvider::class,
+            ServiceProvider::class,
         ];
     }
 

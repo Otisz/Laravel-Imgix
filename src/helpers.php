@@ -1,8 +1,9 @@
 <?php
 /**
  * Deployed by Levente Otta <leventeotta@gmail.com>
+ *
  * @author Levente Otta <leventeotta@gmail.com>
- * Copyright (c) 2019. All rights reserved.
+ * @copyright Copyright (c) 2019. Levente Otta
  */
 
 if (!function_exists('imgix')) {
