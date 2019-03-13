@@ -52,8 +52,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Otisz\\Imgix\\ImgixServiceProvider"
-            ]
+                "Otisz\\Imgix\\Providers\\ServiceProvider"
+            ],
+            "aliases": {
+                "Imgix": "Otisz\\Imgix\\Facades\\Imgix"
+            }
         }
     },
     "non-feature-branches": [
