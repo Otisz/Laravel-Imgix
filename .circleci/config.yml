@@ -11,7 +11,7 @@ jobs:
       - run: sudo composer self-update
       - run: composer install -n
       - run: vendor/bin/phpunit
-      - run: vendor/bin/phpcs --standard=PSR2 src test
+      - run: vendor/bin/phpcs --standard=PSR2 src
 
   test-7.2:
     <<: *test-template
