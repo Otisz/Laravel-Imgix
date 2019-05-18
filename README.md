@@ -7,10 +7,19 @@
 
 Laravel package for generating [Imgix](https://www.imgix.com) URLs for your images with multi-domain support.
 
+## Note
+
+**URL Sharding has been deprecated in imgix-php v2.3**
+
+For more details check out [#42](https://github.com/imgix/imgix-php/pull/42)
+and also read the [blog post](https://blog.imgix.com/2019/05/03/deprecating-domain-sharding).
+
+Url sharding will be removed from this package in v2.
+
 ## Dependencies
 
 - [PHP](https://secure.php.net): ^7.1
-- [imgix/imgix-php](https://github.com/imgix/imgix-php): ^2.1
+- [imgix/imgix-php](https://github.com/imgix/imgix-php): ^2.2
 - [illuminate/support](https://github.com/illuminate/support): ^5.0
 
 ## Install
