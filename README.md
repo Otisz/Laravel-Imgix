@@ -5,16 +5,7 @@
 [![Build Status][shield-circleci]][link-circleci]
 [![Total Downloads][shield-downloads]][link-packagist]
 
-Laravel package for generating [Imgix](https://www.imgix.com) URLs for your images with multi-domain support.
-
-## Note
-
-**URL Sharding has been deprecated in imgix-php v2.3**
-
-For more details check out [#42](https://github.com/imgix/imgix-php/pull/42)
-and also read the [blog post](https://blog.imgix.com/2019/05/03/deprecating-domain-sharding).
-
-Url sharding will be removed from this package in v2.
+Laravel package for generating [Imgix](https://www.imgix.com) URLs for your images.
 
 ## Dependencies
 
@@ -33,7 +24,7 @@ In Laravel 5.5 or above the service provider will automatically get registered. 
 ```php
 'providers' => [
     ...
-    Otisz\Imgix\Providers\ServiceProvider::class,
+    Otisz\Imgix\ImgixServiceProvider::class,
     ...
 ],
 
@@ -46,7 +37,7 @@ In Laravel 5.5 or above the service provider will automatically get registered. 
 
 You can publish the config file with:
 ```bash
-$ php artisan vendor:publish --tag=imgix
+$ php artisan vendor:publish --provider="Otisz\Imgix\ImgixServiceProvider" --tag=config
 ```
 
 When published, [the `config/imgix.php` config](config/imgix.php) file contains:
@@ -66,26 +57,9 @@ return [
     | @link https://github.com/imgix/imgix-php#domain-sharded-urls
     |
     */
-    'domains' => [
+    'domain' => [
         env('IMGIX_DOMAIN', 'example.imgix.net'),
-        env('IMGIX_DOMAIN2'),
-        env('IMGIX_DOMAIN3'),
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | ImgIX Domains
-    |--------------------------------------------------------------------------
-    |
-    | By default, shards are calculated using a checksum so that the image
-    | path always resolves to the same domain. This improves caching in the
-    | browser. However, you can supply a different strategy that cycles
-    | through domains instead.
-    |
-    | Supported: \Imgix\ShardStrategy::CRC, \Imgix\ShardStrategy::CYCLE
-    |
-    */
-    'shardStrategy' => \Imgix\ShardStrategy::CRC,
 
     /*
     |--------------------------------------------------------------------------
@@ -164,13 +138,13 @@ $ composer test
 
 ## Contributing
 
-### Security
+### Security Vulnerabilities
 
-If you discover any security-related issues, please email [leventeotta@gmail.com](mailto:leventeotta@gmail.com) instead of using the issue tracker.
+If you discover any security-related issues, please email [leventeotta@gmail.com](mailto:leventeotta@gmail.com) instead of using the issue tracker. All security vulnerabilities will be promptly addressed.
 
 ## Licence
 
-The MIT Licence (MIT). Please see [License File](LICENSE.md) for more information.
+The Laravel Imgix package is open-source software licensed under the [MIT license](LICENSE.md).
 
 [shield-packagist]: https://img.shields.io/packagist/v/otisz/laravel-imgix.svg?style=flat-square
 [shield-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square

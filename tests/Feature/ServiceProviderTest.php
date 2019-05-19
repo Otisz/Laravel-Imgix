@@ -8,7 +8,6 @@
 
 namespace Otisz\Imgix\Tests\Feature;
 
-use Imgix\UrlBuilder;
 use Otisz\Imgix\Imgix;
 
 /**

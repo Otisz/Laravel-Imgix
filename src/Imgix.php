@@ -24,7 +24,7 @@ class Imgix
      *
      * @var \Imgix\UrlBuilder
      */
-    protected $urlBuilder;
+    protected static $urlBuilder;
 
     /**
      * Create a new imgix instance.
@@ -33,7 +33,7 @@ class Imgix
      */
     public function __construct(UrlBuilder $urlBuilder)
     {
-        $this->urlBuilder = $urlBuilder;
+        self::$urlBuilder = $urlBuilder;
     }
 
     /**
@@ -44,8 +44,8 @@ class Imgix
      *
      * @return string
      */
-    public function createUrl($path, array $params = []): string
+    public static function createUrl(string $path, array $params = []): string
     {
-        return $this->urlBuilder->createURL($path, $params);
+        return self::$urlBuilder->createURL($path, $params);
     }
 }
