@@ -20,9 +20,7 @@ return [
     | @link https://github.com/imgix/imgix-php#domain-sharded-urls
     |
     */
-    'domain' => [
-        env('IMGIX_DOMAIN', 'example.imgix.net'),
-    ],
+    'domain' => env('IMGIX_DOMAIN', 'example.imgix.net'),
 
     /*
     |--------------------------------------------------------------------------

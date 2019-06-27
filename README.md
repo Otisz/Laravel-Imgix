@@ -10,7 +10,7 @@ Laravel package for generating [Imgix](https://www.imgix.com) URLs for your imag
 ## Dependencies
 
 - [PHP](https://secure.php.net): ^7.1
-- [imgix/imgix-php](https://github.com/imgix/imgix-php): ^2.2
+- [imgix/imgix-php](https://github.com/imgix/imgix-php): ^3.0
 - [illuminate/support](https://github.com/illuminate/support): ^5.0
 
 ## Install
@@ -43,6 +43,8 @@ $ php artisan vendor:publish --provider="Otisz\Imgix\ImgixServiceProvider" --tag
 When published, [the `config/imgix.php` config](config/imgix.php) file contains:
 
 ```php
+<?php
+
 return [
     /*
     |--------------------------------------------------------------------------
@@ -57,9 +59,7 @@ return [
     | @link https://github.com/imgix/imgix-php#domain-sharded-urls
     |
     */
-    'domain' => [
-        env('IMGIX_DOMAIN', 'example.imgix.net'),
-    ],
+    'domain' => env('IMGIX_DOMAIN', 'example.imgix.net'),
 
     /*
     |--------------------------------------------------------------------------
