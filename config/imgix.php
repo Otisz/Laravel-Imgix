@@ -20,26 +20,7 @@ return [
     | @link https://github.com/imgix/imgix-php#domain-sharded-urls
     |
     */
-    'domains' => [
-        env('IMGIX_DOMAIN', 'example.imgix.net'),
-        env('IMGIX_DOMAIN2'),
-        env('IMGIX_DOMAIN3'),
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | ImgIX Domains
-    |--------------------------------------------------------------------------
-    |
-    | By default, shards are calculated using a checksum so that the image
-    | path always resolves to the same domain. This improves caching in the
-    | browser. However, you can supply a different strategy that cycles
-    | through domains instead.
-    |
-    | Supported: \Imgix\ShardStrategy::CRC, \Imgix\ShardStrategy::CYCLE
-    |
-    */
-    'shardStrategy' => \Imgix\ShardStrategy::CRC,
+    'domain' => env('IMGIX_DOMAIN', 'example.imgix.net'),
 
     /*
     |--------------------------------------------------------------------------

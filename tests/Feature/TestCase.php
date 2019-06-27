@@ -10,7 +10,7 @@ namespace Otisz\Imgix\Tests\Feature;
 
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use Otisz\Imgix\Imgix;
-use Otisz\Imgix\Providers\ServiceProvider;
+use Otisz\Imgix\ImgixServiceProvider;
 
 /**
  * Class TestCase
@@ -29,7 +29,7 @@ abstract class TestCase extends BaseTestCase
     protected function getPackageProviders($app): array
     {
         return [
-            ServiceProvider::class,
+            ImgixServiceProvider::class,
         ];
     }
 

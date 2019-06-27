@@ -5,21 +5,12 @@
 [![Build Status][shield-circleci]][link-circleci]
 [![Total Downloads][shield-downloads]][link-packagist]
 
-Laravel package for generating [Imgix](https://www.imgix.com) URLs for your images with multi-domain support.
-
-## Note
-
-**URL Sharding has been deprecated in imgix-php v2.3**
-
-For more details check out [#42](https://github.com/imgix/imgix-php/pull/42)
-and also read the [blog post](https://blog.imgix.com/2019/05/03/deprecating-domain-sharding).
-
-Url sharding will be removed from this package in v2.
+Laravel package for generating [Imgix](https://www.imgix.com) URLs for your images.
 
 ## Dependencies
 
 - [PHP](https://secure.php.net): ^7.1
-- [imgix/imgix-php](https://github.com/imgix/imgix-php): ^2.2
+- [imgix/imgix-php](https://github.com/imgix/imgix-php): ^3.0
 - [illuminate/support](https://github.com/illuminate/support): ^5.0
 
 ## Install
@@ -33,7 +24,7 @@ In Laravel 5.5 or above the service provider will automatically get registered. 
 ```php
 'providers' => [
     ...
-    Otisz\Imgix\Providers\ServiceProvider::class,
+    Otisz\Imgix\ImgixServiceProvider::class,
     ...
 ],
 
@@ -46,12 +37,14 @@ In Laravel 5.5 or above the service provider will automatically get registered. 
 
 You can publish the config file with:
 ```bash
-$ php artisan vendor:publish --tag=imgix
+$ php artisan vendor:publish --provider="Otisz\Imgix\ImgixServiceProvider" --tag=config
 ```
 
 When published, [the `config/imgix.php` config](config/imgix.php) file contains:
 
 ```php
+<?php
+
 return [
     /*
     |--------------------------------------------------------------------------
@@ -66,26 +59,7 @@ return [
     | @link https://github.com/imgix/imgix-php#domain-sharded-urls
     |
     */
-    'domains' => [
-        env('IMGIX_DOMAIN', 'example.imgix.net'),
-        env('IMGIX_DOMAIN2'),
-        env('IMGIX_DOMAIN3'),
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | ImgIX Domains
-    |--------------------------------------------------------------------------
-    |
-    | By default, shards are calculated using a checksum so that the image
-    | path always resolves to the same domain. This improves caching in the
-    | browser. However, you can supply a different strategy that cycles
-    | through domains instead.
-    |
-    | Supported: \Imgix\ShardStrategy::CRC, \Imgix\ShardStrategy::CYCLE
-    |
-    */
-    'shardStrategy' => \Imgix\ShardStrategy::CRC,
+    'domain' => env('IMGIX_DOMAIN', 'example.imgix.net'),
 
     /*
     |--------------------------------------------------------------------------
@@ -164,17 +138,17 @@ $ composer test
 
 ## Contributing
 
-### Security
+### Security Vulnerabilities
 
-If you discover any security-related issues, please email [leventeotta@gmail.com](mailto:leventeotta@gmail.com) instead of using the issue tracker.
+If you discover any security-related issues, please email [leventeotta@gmail.com](mailto:leventeotta@gmail.com) instead of using the issue tracker. All security vulnerabilities will be promptly addressed.
 
 ## Licence
 
-The MIT Licence (MIT). Please see [License File](LICENSE.md) for more information.
+The Laravel Imgix package is open-source software licensed under the [MIT license](LICENSE.md).
 
 [shield-packagist]: https://img.shields.io/packagist/v/otisz/laravel-imgix.svg?style=flat-square
 [shield-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[shield-circleci]: https://img.shields.io/circleci/token/67d66f24c8eabf5cb95da9dc574bf2c2da59c096/project/github/otisz/laravel-imgix/master.svg?style=flat-square
+[shield-circleci]: https://img.shields.io/circleci/build/github/Otisz/Laravel-Imgix.svg?style=flat-square&token=67d66f24c8eabf5cb95da9dc574bf2c2da59c096
 [shield-downloads]: https://img.shields.io/packagist/dt/otisz/laravel-imgix.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/otisz/laravel-imgix
