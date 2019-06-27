@@ -148,7 +148,7 @@ The Laravel Imgix package is open-source software licensed under the [MIT licens
 
 [shield-packagist]: https://img.shields.io/packagist/v/otisz/laravel-imgix.svg?style=flat-square
 [shield-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[shield-circleci]: https://img.shields.io/circleci/token/67d66f24c8eabf5cb95da9dc574bf2c2da59c096/project/github/otisz/laravel-imgix/master.svg?style=flat-square
+[shield-circleci]: https://img.shields.io/circleci/build/github/Otisz/Laravel-Imgix.svg?style=flat-square&token=67d66f24c8eabf5cb95da9dc574bf2c2da59c096
 [shield-downloads]: https://img.shields.io/packagist/dt/otisz/laravel-imgix.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/otisz/laravel-imgix
