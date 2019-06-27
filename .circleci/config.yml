@@ -12,6 +12,7 @@ jobs:
           keys:
             - v1-depencies-{{ checksum "composer.json" }}
             - v1-depencies-
+      - run: composer global require hirak/prestissimo
       - run: composer install -n --prefer-dist
       - save_cache:
           key: v1-depencies-{{ checksum "composer.json" }}
