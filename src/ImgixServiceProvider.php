@@ -14,8 +14,6 @@ use Imgix\UrlBuilder;
 /**
  * Class ImgixServiceProvider
  *
- * @author Levente Otta <leventeotta@gmail.com>
- *
  * @package Otisz\Imgix
  */
 class ImgixServiceProvider extends BaseServiceProvider

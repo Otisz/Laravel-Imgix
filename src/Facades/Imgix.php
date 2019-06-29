@@ -13,8 +13,6 @@ use Illuminate\Support\Facades\Facade;
 /**
  * Class Imgix
  *
- * @author Levente Otta <leventeotta@gmail.com>
- *
  * @package Otisz\Imgix\Facades
  *
  * @method static string createUrl(string $path, array $params = [])

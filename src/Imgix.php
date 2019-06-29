@@ -13,18 +13,16 @@ use Imgix\UrlBuilder;
 /**
  * Class Imgix
  *
- * @author Levente Otta <leventeotta@gmail.com>
- *
  * @package Otisz\Imgix
  */
 class Imgix
 {
     /**
-     * The imgix url builder instance.
+     * The ImgIX url builder instance.
      *
-     * @var \Imgix\UrlBuilder
+     * @var \Imgix\UrlBuilder $urlBuilder
      */
-    protected static $urlBuilder;
+    protected $urlBuilder;
 
     /**
      * Create a new imgix instance.
@@ -33,7 +31,7 @@ class Imgix
      */
     public function __construct(UrlBuilder $urlBuilder)
     {
-        self::$urlBuilder = $urlBuilder;
+        $this->urlBuilder = $urlBuilder;
     }
 
     /**
@@ -44,8 +42,8 @@ class Imgix
      *
      * @return string
      */
-    public static function createUrl(string $path, array $params = []): string
+    public function createUrl(string $path, array $params = []): string
     {
-        return self::$urlBuilder->createURL($path, $params);
+        return $this->urlBuilder->createURL($path, $params);
     }
 }
