@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist][shield-packagist]][link-packagist]
 [![Software License][shield-license]](LICENSE.md)
-[![Build Status][shield-circleci]][link-circleci]
+[![Build Status][shield-travis]][link-travis]
 [![Total Downloads][shield-downloads]][link-packagist]
 
 Laravel package for generating [Imgix](https://www.imgix.com) URLs for your images.
@@ -148,8 +148,8 @@ The Laravel Imgix package is open-source software licensed under the [MIT licens
 
 [shield-packagist]: https://img.shields.io/packagist/v/otisz/laravel-imgix.svg?style=flat-square
 [shield-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[shield-circleci]: https://img.shields.io/circleci/build/github/Otisz/Laravel-Imgix.svg?style=flat-square&token=67d66f24c8eabf5cb95da9dc574bf2c2da59c096
+[shield-travis]: https://img.shields.io/travis/Otisz/Laravel-Imgix.svg?style=flat-square
 [shield-downloads]: https://img.shields.io/packagist/dt/otisz/laravel-imgix.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/otisz/laravel-imgix
-[link-circleci]: https://circleci.com/gh/Otisz/Laravel-Imgix
+[link-travis]: https://travis-ci.org/Otisz/Laravel-Imgix
