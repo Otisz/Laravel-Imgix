@@ -1,6 +1,6 @@
 <?php
 /**
- * Deployed by Levente Otta <leventeotta@gmail.com>
+ * Developed by Levente Otta <leventeotta@gmail.com>
  *
  * @author Levente Otta <leventeotta@gmail.com>
  * @copyright Copyright (c) 2019. Levente Otta
@@ -27,7 +27,7 @@ class Imgix
     /**
      * Create a new imgix instance.
      *
-     * @param \Imgix\UrlBuilder $urlBuilder
+     * @param  \Imgix\UrlBuilder  $urlBuilder
      */
     public function __construct(UrlBuilder $urlBuilder)
     {
@@ -37,8 +37,8 @@ class Imgix
     /**
      * Create an imgix url for the given path.
      *
-     * @param string $path
-     * @param array $params
+     * @param  string  $path
+     * @param  array  $params
      *
      * @return string
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Deployed by Levente Otta <leventeotta@gmail.com>
+ * Developed by Levente Otta <leventeotta@gmail.com>
  *
  * @author Levente Otta <leventeotta@gmail.com>
  * @copyright Copyright (c) 2019. Levente Otta
@@ -25,7 +25,7 @@ class ImgixServiceProvider extends BaseServiceProvider
      */
     public function boot(): void
     {
-        $configPath = __DIR__ . '/../config/imgix.php';
+        $configPath = __DIR__.'/../config/imgix.php';
 
         $this->publishes([$configPath => config_path('imgix.php')], 'config');
 
