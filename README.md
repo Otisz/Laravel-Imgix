@@ -10,8 +10,8 @@ Laravel package for generating [Imgix](https://www.imgix.com) URLs for your imag
 ## Dependencies
 
 - [PHP](https://secure.php.net): ^7.1
-- [imgix/imgix-php](https://github.com/imgix/imgix-php): ^3.0
-- [illuminate/support](https://github.com/illuminate/support): ^5.0
+- [imgix/imgix-php](https://github.com/imgix/imgix-php): ^3.1
+- [illuminate/support](https://github.com/illuminate/support): ^5.5
 
 ## Install
 
@@ -99,40 +99,30 @@ return [
     
 ## Usage
 
-### Facade
-
-```php
-\Imgix::createUrl(string $path, array $params = []): string
-```
+**Read more about [srcset](https://github.com/imgix/imgix-php#srcset-generation).**
 
 `$path`: The path of the image \
 `$params`: The parameters provided by [Imgix](https://docs.imgix.com/apis/url)
 
-```php
-\Imgix::createUrl('bridge.png', ['w' => 100, 'h' => 100])
+### Facade
 
-// http://example.imgix.net/bridge.png?w=100&h=100
+```php
+\Imgix::createUrl('bridge.png', ['w' => 100, 'h' => 100]);
+
+\Imgix::createSrcSet('bridge.png', ['w' => 100, 'h' => 100]);
 ```
 
 ### Helper
 
 ```php
-imgix(string $path, array $params = []): string
-```
-
-`$path`: The path of the image \
-`$params`: The parameters provided by [Imgix](https://docs.imgix.com/apis/url)
-
-```php
 imgix('bridge.png', ['w' => 100, 'h' => 100])
 
-// http://example.imgix.net/bridge.png?w=100&h=100
+imgixSrcSet('bridge.png', ['w' => 100, 'h' => 100])
 ```
     
 ## Testing
 
 ``` bash
-$ composer lint
 $ composer test
 ```
 

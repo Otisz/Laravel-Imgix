@@ -8,6 +8,7 @@
 
 namespace Otisz\Imgix;
 
+use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use Imgix\UrlBuilder;
 
@@ -39,17 +40,19 @@ class ImgixServiceProvider extends BaseServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton(Imgix::class, static function () {
+        $this->app->singleton('Imgix', static function (Application $app) {
+            $config = $app['config']['imgix'];
+
             $builder = new UrlBuilder(
-                config('imgix.domain'),
-                config('imgix.useHttps', false),
-                config('imgix.signKey', ''),
-                config('imgix.includeLibraryParam', true)
+                $config['domain'],
+                $config['useHttps'],
+                $config['signKey'],
+                $config['includeLibraryParam']
             );
 
-            return new Imgix($builder);
+            return new ImgixBuilder($builder);
         });
 
-        $this->app->alias(Imgix::class, 'imgix');
+        $this->app->alias(ImgixBuilder::class, 'imgix');
     }
 }

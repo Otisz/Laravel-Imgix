@@ -6,19 +6,12 @@
  * @copyright Copyright (c) 2019. Levente Otta
  */
 
-namespace Otisz\Imgix\Tests\Feature;
+namespace Otisz\Imgix\Tests;
 
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use Otisz\Imgix\Imgix;
+use Otisz\Imgix\Facades\Imgix;
 use Otisz\Imgix\ImgixServiceProvider;
 
-/**
- * Class TestCase
- *
- * @author Levente Otta <leventeotta@gmail.com>
- *
- * @package Otisz\Imgix\Tests\Feature
- */
 abstract class TestCase extends BaseTestCase
 {
     /**

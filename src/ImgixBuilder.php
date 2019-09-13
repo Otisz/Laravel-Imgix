@@ -10,12 +10,7 @@ namespace Otisz\Imgix;
 
 use Imgix\UrlBuilder;
 
-/**
- * Class Imgix
- *
- * @package Otisz\Imgix
- */
-class Imgix
+class ImgixBuilder
 {
     /**
      * The ImgIX url builder instance.
@@ -45,5 +40,18 @@ class Imgix
     public function createUrl(string $path, array $params = []): string
     {
         return $this->urlBuilder->createURL($path, $params);
+    }
+
+    /**
+     * Create an imgix src set for the given path.
+     *
+     * @param  string  $path
+     * @param  array  $params
+     *
+     * @return bool|string
+     */
+    public function createSrcSet(string $path, array $params = [])
+    {
+        return $this->urlBuilder->createSrcSet($path, $params);
     }
 }

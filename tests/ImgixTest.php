@@ -6,20 +6,12 @@
  * @copyright Copyright (c) 2019. Levente Otta
  */
 
-namespace Otisz\Imgix\Tests\Unit;
+namespace Otisz\Imgix\Tests;
 
 use Imgix\UrlBuilder;
 use Mockery;
-use Otisz\Imgix\Imgix;
-use PHPUnit\Framework\TestCase;
+use Otisz\Imgix\ImgixBuilder;
 
-/**
- * Class ImgixTest
- *
- * @author Levente Otta <leventeotta@gmail.com>
- *
- * @package Otisz\Imgix\Tests\Unit
- */
 class ImgixTest extends TestCase
 {
     /**
@@ -28,7 +20,7 @@ class ImgixTest extends TestCase
     protected $urlBuilder;
 
     /**
-     * @var \Otisz\Imgix\Imgix
+     * @var \Otisz\Imgix\ImgixBuilder
      */
     protected $imgix;
 
@@ -38,7 +30,7 @@ class ImgixTest extends TestCase
     protected function setUp(): void
     {
         $this->urlBuilder = Mockery::mock(UrlBuilder::class);
-        $this->imgix = new Imgix($this->urlBuilder);
+        $this->imgix = new ImgixBuilder($this->urlBuilder);
     }
 
     /** @test */
@@ -55,6 +47,36 @@ class ImgixTest extends TestCase
             ->once()
             ->andReturn($expectedReturn);
         $response = $this->imgix->createUrl($path, $params);
+        $this->assertEquals($expectedReturn, $response);
+    }
+
+
+    public function it_creates_src_set(): void
+    {
+
+        $expectedArgs = [
+            $path = 'bridge.png',
+        ];
+        $expectedReturn = 'http://example.imgix.net/bridge.png';
+        $this->urlBuilder
+            ->shouldReceive('createSrcSet')
+            ->withArgs($expectedArgs)
+            ->once()
+            ->andReturn($expectedReturn);
+        $response = $this->imgix->createSrcSet($path);
+        $this->assertEquals($expectedReturn, $response);
+
+        $expectedArgs = [
+            $path = 'bridge.png',
+            $params = ['h' => 800, 'ar' => '3:2', 'fit' => 'crop'],
+        ];
+        $expectedReturn = 'http://example.imgix.net/bridge.png?ar=3%3A2&dpr=1&fit=crop&h=800';
+        $this->urlBuilder
+            ->shouldReceive('createSrcSet')
+            ->withArgs($expectedArgs)
+            ->once()
+            ->andReturn($expectedReturn);
+        $response = $this->imgix->createSrcSet($path, $params);
         $this->assertEquals($expectedReturn, $response);
     }
 
