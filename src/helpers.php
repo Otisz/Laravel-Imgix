@@ -32,6 +32,6 @@ if (!function_exists('imgixSrcSet')) {
      */
     function imgixSrcSet($path, array $params = [])
     {
-        return app('imgix')->imgixSrcSet($path, $params);
+        return app('imgix')->createSrcSet($path, $params);
     }
 }
