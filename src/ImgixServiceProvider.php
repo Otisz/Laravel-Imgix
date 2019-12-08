@@ -40,7 +40,7 @@ class ImgixServiceProvider extends BaseServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton('Imgix', static function (Application $app) {
+        $this->app->singleton('imgix', static function (Application $app) {
             $config = $app['config']['imgix'];
 
             $builder = new UrlBuilder(
@@ -53,6 +53,6 @@ class ImgixServiceProvider extends BaseServiceProvider
             return new ImgixBuilder($builder);
         });
 
-        $this->app->alias(ImgixBuilder::class, 'imgix');
+        $this->app->alias(ImgixBuilder::class, 'Imgix');
     }
 }

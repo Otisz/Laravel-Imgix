@@ -18,6 +18,6 @@ class Imgix extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return 'Imgix';
+        return 'imgix';
     }
 }
