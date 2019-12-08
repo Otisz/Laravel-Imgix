@@ -23,6 +23,6 @@ class ServiceProviderTest extends TestCase
     public function it_registers(): void
     {
         $this->assertTrue($this->app->bound('Imgix'));
-        $this->assertInstanceOf(ImgixBuilder::class, $this->app->make('Imgix'));
+        $this->assertInstanceOf(ImgixBuilder::class, $this->app->make('imgix'));
     }
 }
