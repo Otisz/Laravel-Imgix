@@ -15,7 +15,7 @@ use Otisz\Imgix\ImgixServiceProvider;
 abstract class TestCase extends BaseTestCase
 {
     /**
-     * @param \Illuminate\Foundation\Application $app
+     * @param  \Illuminate\Foundation\Application  $app
      *
      * @return array
      */
@@ -27,7 +27,7 @@ abstract class TestCase extends BaseTestCase
     }
 
     /**
-     * @param \Illuminate\Foundation\Application $app
+     * @param  \Illuminate\Foundation\Application  $app
      *
      * @return array
      */

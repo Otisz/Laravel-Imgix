@@ -50,10 +50,8 @@ class ImgixTest extends TestCase
         $this->assertEquals($expectedReturn, $response);
     }
 
-
     public function it_creates_src_set(): void
     {
-
         $expectedArgs = [
             $path = 'bridge.png',
         ];
