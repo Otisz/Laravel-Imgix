@@ -24,7 +24,7 @@ return [
     | For HTTPS support.
     |
     */
-    'useHttps' => env('IMGIX_HTTPS', false),
+    'useHttps' => env('IMGIX_HTTPS', true),
 
     /*
     |--------------------------------------------------------------------------
