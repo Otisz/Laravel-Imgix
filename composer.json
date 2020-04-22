@@ -5,8 +5,10 @@
         "laravel",
         "laravel-5",
         "laravel-6",
+        "laravel-7",
         "laravel-5-package",
         "laravel-6-package",
+        "laravel-7-package",
         "imgix",
         "cdn",
         "image",
@@ -27,7 +29,7 @@
     ],
     "require": {
         "php": "^7.1",
-        "illuminate/support": "^5.5|^6.0",
+        "illuminate/support": "^5.5|^6.0|^7.0",
         "imgix/imgix-php": "^3.1"
     },
     "require-dev": {

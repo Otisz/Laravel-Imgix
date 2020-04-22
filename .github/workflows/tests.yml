@@ -13,7 +13,7 @@ jobs:
       matrix:
         php: [7.2, 7.3, 7.4]
         stability: [prefer-lowest, prefer-stable]
-        laravel: [5.8.*, 6.*]
+        laravel: [5.8.*, 6.*, 7.*]
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }}
     steps:
       - name: Checkout code
