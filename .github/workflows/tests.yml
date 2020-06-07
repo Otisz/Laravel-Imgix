@@ -4,7 +4,7 @@ on:
   push:
   pull_request:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * 1'
 
 jobs:
   tests:
@@ -12,9 +12,8 @@ jobs:
     strategy:
       matrix:
         php: [7.3, 7.4]
-        stability: [prefer-lowest, prefer-stable]
         laravel: [6.*, 7.*]
-    name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }}
+    name: P${{ matrix.php }} - L${{ matrix.laravel }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -34,7 +33,7 @@ jobs:
         run: |
           composer global require hirak/prestissimo
           composer require "illuminate/support:${{ matrix.laravel }}" --no-interaction --no-update
-          composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-suggest
+          composer update --prefer-stable --prefer-dist --no-interaction --no-suggest
 
       - name: Execute tests
         run: vendor/bin/phpunit --verbose

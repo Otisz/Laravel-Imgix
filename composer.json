@@ -29,12 +29,12 @@
     ],
     "require": {
         "php": "^7.1",
-        "illuminate/support": "^5.5|6.*|7.*",
+        "illuminate/support": "^5.5|^6.0|^7.0",
         "imgix/imgix-php": "^3.1"
     },
     "require-dev": {
         "mockery/mockery": "^1.2|2.*",
-        "orchestra/testbench": "^3.5|^4.0",
+        "orchestra/testbench": "^3.5|^4.0|^5.0",
         "phpunit/phpunit": "^6.5|^7.0|^8.0"
     },
     "autoload": {
