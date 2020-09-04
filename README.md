@@ -11,9 +11,9 @@ Laravel package for generating [Imgix](https://www.imgix.com) URLs for your imag
 
 ## Dependencies
 
-- [PHP](https://secure.php.net): ^7.1
-- [imgix/imgix-php](https://github.com/imgix/imgix-php): ^3.1
-- [illuminate/support](https://github.com/illuminate/support): ^5.5
+- [PHP](https://secure.php.net): ^7.2
+- [imgix/imgix-php](https://github.com/imgix/imgix-php): ^3.3
+- [illuminate/support](https://github.com/illuminate/support): 6.* | 7.* | 8.*
 
 ## Install
 
