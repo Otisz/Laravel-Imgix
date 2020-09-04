@@ -3,12 +3,9 @@
     "description": "Laravel package for generating Imgix URLs for your images",
     "keywords": [
         "laravel",
-        "laravel-5",
         "laravel-6",
         "laravel-7",
-        "laravel-5-package",
-        "laravel-6-package",
-        "laravel-7-package",
+        "laravel-8",
         "imgix",
         "cdn",
         "image",
@@ -29,13 +26,11 @@
     ],
     "require": {
         "php": "^7.1",
-        "illuminate/support": "^5.5|^6.0|^7.0",
-        "imgix/imgix-php": "^3.1"
+        "illuminate/support": "^6.0|^7.0|^8.0",
+        "imgix/imgix-php": "^3.3"
     },
     "require-dev": {
-        "mockery/mockery": "^1.2|2.*",
-        "orchestra/testbench": "^3.5|^4.0|^5.0",
-        "phpunit/phpunit": "^6.5|^7.0|^8.0"
+        "orchestra/testbench": "^4.0|^5.0|^6.0"
     },
     "autoload": {
         "files": [
@@ -66,6 +61,6 @@
     "config": {
         "sort-packages": true
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }

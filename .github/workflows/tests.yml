@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         php: [7.3, 7.4]
-        laravel: [6.*, 7.*]
+        laravel: [6.*, 7.*, 8.*]
     name: P${{ matrix.php }} - L${{ matrix.laravel }}
     steps:
       - name: Checkout code
