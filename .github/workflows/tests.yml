@@ -31,7 +31,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer global require hirak/prestissimo
           composer require "illuminate/support:${{ matrix.laravel }}" --no-interaction --no-update
           composer update --prefer-stable --prefer-dist --no-interaction --no-suggest
 
